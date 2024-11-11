@@ -1,0 +1,44 @@
+.label {
+  display: inline-block;
+  color: var(--main-grey);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.inputField {
+  position: relative;
+  display: flex;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid rgba(47, 47, 47, 0.2);
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  color: rgba(47, 47, 47, 0.8);
+  outline: none;
+  background-color: transparent;
+}
+
+.inputField::placeholder {
+  color: rgba(47, 47, 47, 0.6);
+}
+
+.emailField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.inputError {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.span {
+  color: #ff0000;
+}
