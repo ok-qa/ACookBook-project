@@ -10,5 +10,11 @@ export const authRequests = () => {
         url: `${authPrefix}register`,
         data,
       }),
+    loginRequest: async (data) =>
+      axiosInstance.request({
+        method: "POST",
+        url: `${authPrefix}login`,
+        data,
+      }),
   };
 };

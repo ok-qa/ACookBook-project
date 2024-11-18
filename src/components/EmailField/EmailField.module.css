@@ -2,7 +2,7 @@
   display: inline-block;
   color: var(--main-grey);
   font-family: Poppins, sans-serif;
-  font-size: 14px;
+
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 8px;
@@ -41,4 +41,14 @@
 
 .span {
   color: #ff0000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #ff0000;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 12px;
 }

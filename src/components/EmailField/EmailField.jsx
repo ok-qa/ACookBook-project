@@ -1,8 +1,10 @@
 import { ErrorMessage, Field, useFormikContext } from "formik";
 import css from "./EmailField.module.css";
 
-const EmailField = ({ className, textLabel = "Email" }) => {
+const EmailField = ({ className, textLabel = "Email", emailError }) => {
   const { errors, touched } = useFormikContext();
+  const errorStyle =
+    (errors.email && touched.email) || emailError ? css.inputError : "";
 
   return (
     <div className={`${className} ${css.emailField}`}>
@@ -16,11 +18,10 @@ const EmailField = ({ className, textLabel = "Email" }) => {
         id="email"
         name="email"
         placeholder="Enter your email"
-        className={`${css.inputField} ${
-          errors.email && touched.email ? css.inputError : ""
-        }`}
+        className={`${css.inputField} ${errorStyle}`}
       />
       <ErrorMessage name="email" component="span" className={css.span} />
+      {emailError && <div className={css.errorMessage}>{emailError}</div>}
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
+import { useState } from "react";
 
 import css from "./SignUpForm.module.css";
 import EmailField from "../EmailField/EmailField";
 import PasswordField from "../PasswordField/PasswordField";
 import { api } from "../../api";
 import { Logo } from "../LogoName/Logo";
+import { requestSignIn } from "../../services";
 
 const SignUpFormSchema = Yup.object().shape({
   email: Yup.string()
@@ -26,6 +28,8 @@ const initialValues = {
 };
 
 const SignUpForm = () => {
+  const [emailError, setEmailError] = useState("");
+
   const handleSubmit = async (values, { resetForm }) => {
     try {
       const userInfo = {
@@ -34,8 +38,15 @@ const SignUpForm = () => {
         name: "User",
       };
       const response = await api.signUpRequest(userInfo);
-      console.log(response);
+
+      const loggedInUser = await requestSignIn({
+        email: userInfo.email,
+        password: userInfo.password,
+      });
     } catch (error) {
+      if (error.status === 409) {
+        setEmailError("Email already in use");
+      }
       console.error(error);
     }
   };
@@ -53,7 +64,7 @@ const SignUpForm = () => {
           const buttonDisabled = !dirty || (!isValid && dirty);
           return (
             <Form className={css.formContainer}>
-              <EmailField className={css.emailField} />
+              <EmailField className={css.emailField} emailError={emailError} />
               <PasswordField />
               <PasswordField
                 name="confirmPassword"
