@@ -1,0 +1,149 @@
+/* Mobile*/
+.wrapper {
+  position: relative;
+  padding: 24px 16px;
+  max-width: 375px;
+  width: 100%;
+  border-radius: 30px;
+  background: var(--background);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  margin-top: 24px;
+  margin-left: 16px;
+}
+
+.subTitle {
+  margin-top: 118px;
+  text-align: start;
+  color: var(--main-dark);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.mainTitle {
+  margin-top: 16px;
+  color: var(--main-grey);
+  text-align: start;
+  font-family: Poppins, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.btnGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  list-style-type: none;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  padding: 14px 19px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--main-grey);
+}
+
+.signUp {
+  background-color: var(--accent);
+  border: none;
+}
+
+.signUpHover:hover {
+  background-color: var(--accent-hover);
+}
+
+.signUpDisabled:disabled {
+  background-color: var(--background);
+  color: #323f47 40%;
+}
+
+.signIn {
+  border: 1px solid var(--main-grey);
+  background-color: transparent;
+  color: var(--main-grey);
+}
+
+.signInHover:hover {
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
+}
+
+.signInDisabled:disabled {
+  border-color: var(--main-grey);
+  color: var(--main-grey);
+  opacity: 0.5;
+}
+
+/* Tablet*/
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 704px;
+    flex-shrink: 0;
+    padding-left: 64px;
+    padding-right: 61px;
+    padding-bottom: 50px;
+  }
+
+  .logo {
+    margin-top: 32px;
+    margin-left: 32px;
+  }
+
+  .subTitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.96px;
+  }
+
+  .mainTitle {
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: -0.64px;
+  }
+
+  .button {
+    padding: 18px 40px;
+    gap: 10px;
+  }
+}
+
+/* Desktop*/
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 672px;
+    height: 736px;
+  }
+
+  .logo {
+    margin-top: 32px;
+    margin-left: 33px;
+  }
+  .subTitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.96px;
+  }
+
+  .mainTitle {
+    font-size: 80px;
+    line-height: 76px;
+    letter-spacing: -0.8px;
+  }
+
+  .button {
+    padding: 18px 40px;
+    gap: 10px;
+  }
+}
