@@ -25,4 +25,5 @@ const EmailField = ({ className, textLabel = "Email", emailError }) => {
     </div>
   );
 };
+
 export default EmailField;

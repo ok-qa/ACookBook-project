@@ -1,0 +1,164 @@
+/* Mobile */
+.wrapper {
+  position: relative;
+  padding: 24px 16px;
+  max-width: 375px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 780px;
+  background: var(--background);
+}
+
+.logo {
+  margin-top: 24px;
+  margin-left: 16px;
+}
+
+.title {
+  color: var(--main-grey);
+  margin-bottom: 32px;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 100% */
+  letter-spacing: -0.32px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.label {
+  display: inline-block;
+  color: var(--main-grey);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.inputLastField {
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid rgba(47, 47, 47, 0.2);
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  color: rgba(47, 47, 47, 0.8);
+  outline: none;
+  background-color: transparent;
+}
+
+.inputField::placeholder {
+  color: rgba(47, 47, 47, 0.6);
+}
+
+.submitButton {
+  background-color: var(--accent);
+  color: var(--main-grey);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: var(--accent-hover);
+}
+
+.submitButton[disabled] {
+  background-color: rgba(148, 147, 147, 0.8);
+  cursor: none;
+}
+.submitButton[disabled]:hover {
+  background-color: rgba(148, 147, 147, 0.8);
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 768px) {
+  /* .wrapper {
+    margin: 20px 134px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
+  .wrapper {
+    max-width: 704px;
+    flex-shrink: 0;
+    padding-left: 64px;
+    padding-right: 61px;
+    padding-bottom: 50px;
+  }
+
+  .showPasswordTablet {
+    display: none;
+  }
+  .showPasswordTablet {
+    display: block;
+  }
+
+  .showPasswordBtn {
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+    top: 13px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .inputContainer {
+    position: relative;
+  }
+
+  .submitButton {
+    background-color: var(--accent);
+    color: var(--main-grey);
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .submitButton:hover {
+    background-color: var(--accent-hover);
+  }
+
+  .icon {
+    fill: none;
+    stroke: var(--main-grey);
+    width: 20px;
+    height: 20px;
+  }
+}
