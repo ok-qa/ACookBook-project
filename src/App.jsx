@@ -6,6 +6,8 @@ import RestrictedRoute from "./components/Routes/RestrictedRoute";
 import { HomePage } from "./pages/HomePage/HomePage";
 
 import "./App.css";
+import SignInPage from "./pages/SignInPage/SignInPage";
+import MainRecipesPage from "./pages/MainRecipesPage/MainRecipesPage";
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
               element={<SignUpPage />}
               // element={<RestrictedRoute component={<SignUpPage />} />}
             />
+            <Route
+              path="/signin"
+              element={<SignInPage />}
+              // element={<RestrictedRoute component={<SignInPage />} />}
+            />
+            <Route path="/recipes" element={<MainRecipesPage />} />
           </Route>
         </Routes>
       </Suspense>
