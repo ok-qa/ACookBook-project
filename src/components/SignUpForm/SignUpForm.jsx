@@ -8,6 +8,7 @@ import PasswordField from "../PasswordField/PasswordField";
 import { api } from "../../api";
 import { Logo } from "../LogoName/Logo";
 import { requestSignIn } from "../../services";
+import { useNavigate } from "react-router";
 
 const SignUpFormSchema = Yup.object().shape({
   email: Yup.string()
@@ -28,9 +29,12 @@ const initialValues = {
 };
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (values, { resetForm }) => {
+    setLoading(true);
     try {
       const userInfo = {
         email: values.email,
@@ -43,11 +47,14 @@ const SignUpForm = () => {
         email: userInfo.email,
         password: userInfo.password,
       });
+      navigate("/recipes");
     } catch (error) {
       if (error.status === 409) {
         setEmailError("Email already in use");
       }
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -61,7 +68,7 @@ const SignUpForm = () => {
         validationSchema={SignUpFormSchema}
       >
         {({ isValid, dirty }) => {
-          const buttonDisabled = !dirty || (!isValid && dirty);
+          const buttonDisabled = !dirty || (!isValid && dirty) || loading;
           return (
             <Form className={css.formContainer}>
               <EmailField className={css.emailField} emailError={emailError} />
@@ -73,10 +80,12 @@ const SignUpForm = () => {
               />
               <button
                 type="submit"
-                className={css.submitButton}
+                className={`${css.submitButton} ${loading ? css.loading : ""}`}
+                // className={css.submitButton}
                 disabled={buttonDisabled}
               >
-                Sign up
+                <span className={css.buttonText}>Sign up</span>
+                <div className={css.spinner}></div>
               </button>
             </Form>
           );

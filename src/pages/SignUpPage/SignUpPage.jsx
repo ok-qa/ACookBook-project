@@ -6,13 +6,8 @@ import css from "./SignUpPage.module.css";
 export default function SignUpPage() {
   return (
     <div className={css.container}>
-      {/* <div className={css.signUpWrapper}> */}
-
       <SignUpForm />
-      {/* </div> */}
-      {/* <div className={css.welcomeImg}> */}
       <WelcomeSectionImg />
-      {/* </div> */}
     </div>
   );
 }
