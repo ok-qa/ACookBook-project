@@ -7,6 +7,7 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { api } from "./api";
 
 import "./App.css";
+import MainRecipesPage from "./pages/MainRecipesPage/MainRecipesPage";
 
 function App() {
   console.log(api.getBaseURL());
@@ -22,6 +23,7 @@ function App() {
               // element={<RestrictedRoute component={<SignUpPage />} />}
             />
           </Route>
+          <Route path="/recipes" element={<MainRecipesPage />} />
         </Routes>
       </Suspense>
     </div>
