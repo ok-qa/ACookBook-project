@@ -1,6 +1,52 @@
-.wrapper {
+/* .signUpWrapper {
+  position: relative;
+  max-width: 768px;
+  width: 100%;
+  border-radius: 30px;
+  background: var(--background);
+  margin: 0 auto;
 }
-.signUpSection {
+
+.container {
+  position: relative;
+  margin: 0 auto;
+} */
+
+/* Desktop*/
+/* @media (min-width: 1440px) {
+  .signUpWrapper {
+    max-width: 672px;
+    width: 100%;
+    height: 736px;
+    border-radius: 30px;
+    background: var(--background);
+  }
+
+  .container {
+    display: flex;
+    gap: 32px;
+  }
+} */
+
+/* @media only screen and (min-width: 1440px) {
+  .advSection {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 50%;
+  }
+} */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.imgSection {
+
+@media (min-width: 1440px) {
+  .container {
+    flex-direction: row;
+    gap: 32px;
+  }
 }
