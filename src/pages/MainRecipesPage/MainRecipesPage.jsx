@@ -1,15 +1,13 @@
-import { api } from "../../api";
+// import { api } from "../../api";
+import { RecipesSection } from "../../components/RecipesSection/RecipesSection";
+import { SideBarSection } from "../../components/SideBarSection/SideBarSection";
+import css from "./MainRecipesPage.module.css";
 
 const MainRecipesPage = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <p> {`Welcome. Your token is: ${api.getAuthHeader()}`}</p>
+    <div className={css.container}>
+      <SideBarSection />
+      <RecipesSection />
     </div>
   );
 };

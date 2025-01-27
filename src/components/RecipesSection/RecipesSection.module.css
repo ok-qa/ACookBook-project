@@ -1,0 +1,33 @@
+/* Mobile */
+.wrapper {
+  /* max-width: 375px;
+  width: 100%; */
+  width: 375px;
+  height: 446px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 30px;
+  background: var(--background);
+}
+.header {
+  padding: 10px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .wrapper {
+    width: 768px;
+    height: 446px;
+    /* max-width: 768px; */
+    /* height: 446px; */
+  }
+}
+
+/* Desktop*/
+@media (min-width: 1440px) {
+  .wrapper {
+    /* max-width: 672px; */
+    /* width: 672px; */
+    height: 736px;
+  }
+}
