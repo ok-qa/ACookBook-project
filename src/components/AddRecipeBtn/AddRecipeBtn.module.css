@@ -1,0 +1,54 @@
+.addBtn {
+  z-index: 2;
+  display: flex;
+  padding: 14px 20px;
+  margin-left: auto;
+  margin-top: 30px;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+  height: auto;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--main-grey);
+  color: var(--main-white);
+  /* text-align: center; */
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.addBtn:hover,
+.addBtn:focus {
+  transform: scale(1.1);
+  color: var(--accent-hover);
+}
+
+.addBtn:hover .iconPlus,
+.addBtn:focus .iconPlus {
+  fill: var(--accent-hover);
+  transition: fill 0.3s ease;
+}
+
+.iconPlus {
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .addBtn {
+    padding: 18px 30px;
+    width: 178px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* .iconPlus {
+    fill: var(--main-white);
+    width: 16px;
+    height: 16px;
+  } */
+}
