@@ -1,6 +1,8 @@
 import Select from "react-select";
 
 import css from "./CookingTimeSelect.module.css";
+import { useDispatch } from "react-redux";
+import { setCookingTime } from "../../store/slices/recipes";
 
 const options = [
   { value: "15", label: "up to 15 minutes" },
@@ -12,16 +14,19 @@ const options = [
 ];
 
 export const CookingTimeSelect = () => {
+  const dispatch = useDispatch();
+  const handleCookingTimeSelect = (option) => {
+    const cookingTime = option ? option.value : null;
+    dispatch(setCookingTime(cookingTime));
+  };
   return (
     <div className={css.wrapper}>
       <p className={css.header}>Cooking Time:</p>
       <Select
         options={options}
-        placeholder={"Choose Cooking Time"}
+        placeholder={"Choose Time"}
         isClearable
-        onChange={(option) => {
-          console.log("chosen option: ", option);
-        }}
+        onChange={handleCookingTimeSelect}
       />
     </div>
   );

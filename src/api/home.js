@@ -14,5 +14,10 @@ export const homeRequests = () => {
         method: "GET",
         url: `${homePrefix}categories`,
       }),
+    getRecipesRequest: async (queryString) =>
+      axiosInstance.request({
+        method: "GET",
+        url: `${homePrefix}recipes?${queryString}`,
+      }),
   };
 };

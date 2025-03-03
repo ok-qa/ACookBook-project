@@ -3,7 +3,7 @@
   /* max-width: 375px;
   width: 100%; */
   width: 375px;
-  height: 446px;
+  height: auto;
   position: relative;
   margin: 0 auto;
   border-radius: 30px;
@@ -13,11 +13,32 @@
   padding: 10px;
 }
 
+.listContainer {
+  display: flex;
+}
+
+.recipesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0px;
+  gap: 18px 14px;
+}
+
+.recipeList .text {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--main-white);
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .wrapper {
     width: 768px;
-    height: 446px;
+    height: auto;
     /* max-width: 768px; */
     /* height: 446px; */
   }
